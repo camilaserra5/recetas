@@ -12,7 +12,12 @@ import {
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick';
-const cards = require('../../data/carousel.json');
+import BlogTags from "./BlogTags";
+import {Link} from "react-router-dom";
+
+import { NavLink as RouterLink } from "react-router-dom";
+
+const cards = require('../../data/recipes.json');
 
 // Settings for the slider
 const settings = {
@@ -87,7 +92,7 @@ export default function CaptionCarousel() {
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
-            backgroundImage={`url(${card.image})`}
+            backgroundImage={card.image}
           >
             {/* This is the block you need to change, to customize the caption */}
             <Container size="container.lg" height="600px" position="relative">
@@ -99,12 +104,18 @@ export default function CaptionCarousel() {
                 top="50%"
                 transform="translate(0, -50%)"
               >
-                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-                  {card.title}
-                </Heading>
-                <Text fontSize={{ base: 'md', lg: 'lg' }} color="GrayText">
-                  {card.text}
-                </Text>
+
+                <Box boxShadow='dark-lg' p='2' rounded='md' bg='#bebbbf' opacity='90%' align='center' justify='center'>
+                  <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} color="#0292B7" >
+                    {card.name}
+                  </Heading>
+                  <Text fontSize={{ base: 'md', lg: 'lg' }} color="GrayText">
+                    <Link to={card.uri} state={{ recipe: card }}>
+                      ver más
+                    </Link>
+                  </Text>
+                </Box>
+
               </Stack>
             </Container>
           </Box>

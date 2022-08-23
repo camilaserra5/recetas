@@ -2,12 +2,13 @@
     {
         "id": 1,
         "name": "Brownie",
-        "uri": "receta-brownie",
+        "uri": "recipes/receta-brownie",
         "servings": 2,
         "prepTime": 10,
         "cookTime": 20,
         "totalTime": 30,
-        "image": "hamburguesa.jpeg",
+        "image": "receta1.jpg",
+        "tags": ["rico", "postre"],
         "ingredients": [
             {
                 "quantity":2,
@@ -33,13 +34,14 @@
     },
     {
         "id": 2,
-        "name": "caca",
-        "uri": "receta-caca",
+        "name": "caca y pis",
+        "uri": "recipes/receta-caca",
         "servings": 2,
         "prepTime": 10,
         "cookTime": 20,
         "totalTime": 30,
-        "image": "hamburguesa.jpeg",
+        "image": "receta2.jpg",
+        "tags": ["feo", "feo2"],
         "ingredients": [
             {
                 "quantity":2,
@@ -48,6 +50,34 @@
             },
             {
                 "quantity":2,
+                "unit":"barras",
+                "name":"chocolate"
+            }
+        ],
+        "directions": [
+            "primero asdjhkasjhd ashdkasjh kdha",
+            "segundo asdas",
+            "ultiiiii"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Ketchup con Alioli",
+        "uri": "recipes/receta-alioli",
+        "servings": 2,
+        "prepTime": 10,
+        "cookTime": 20,
+        "totalTime": 30,
+        "image": "receta3.jpg",
+        "tags": ["feo", "feo2"],
+        "ingredients": [
+            {
+                "quantity":2,
+                "unit":"",
+                "name":"huevos"
+            },
+            {
+                "quantity":1,
                 "unit":"barras",
                 "name":"chocolate"
             }
