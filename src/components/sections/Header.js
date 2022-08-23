@@ -13,6 +13,8 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Button,
+  VisuallyHidden,
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
@@ -20,6 +22,31 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
+import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+
+const SocialButton = ({ children, label, href }) => {
+  return (
+    <Button
+      bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+      rounded={'full'}
+      w={8}
+      h={8}
+      cursor={'pointer'}
+      as={'a'}
+      href={href}
+      display={'inline-flex'}
+      alignItems={'center'}
+      justifyContent={'center'}
+      transition={'background 0.3s ease'}
+      _hover={{
+        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
+      }}
+    >
+      <VisuallyHidden>{label}</VisuallyHidden>
+      {children}
+    </Button>
+  );
+};
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
@@ -119,6 +146,17 @@ const DesktopNav = () => {
           </Popover>
         </Box>
       ))}
+      <Box direction={'row'} spacing={2}>
+        <SocialButton label={'Twitter'} href={'#'}>
+          <FaTwitter />
+        </SocialButton>
+        <SocialButton label={'YouTube'} href={'#'}>
+          <FaYoutube />
+        </SocialButton>
+        <SocialButton label={'Instagram'} href={'#'}>
+          <FaInstagram />
+        </SocialButton>
+      </Box>
     </Stack>
   );
 };
