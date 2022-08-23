@@ -5,6 +5,7 @@ export const recipeData = [
         prepTime: 10,
         cookTime: 20,
         totalTime: 30,
+        image: "hamburguesa.jpeg",
         ingredients: [
             {
                 name:"chocolate",
@@ -29,7 +30,7 @@ export const recipeData = [
         prepTime: 30,
         cookTime: 20,
         totalTime: 30,
-        picture: "hamburguesa.jpeg",
+        image: "hamburguesa.jpeg",
         ingredients: [
             {
                 name:"caca",

@@ -3,30 +3,15 @@ import React from "react";
 import LandingLayout from "../components/layouts/LandingLayout";
 import hamburg from '../assets/hamburguesa.jpeg';
 import {
-    Box,
-    chakra,
-    Container,
-    Stack,
-    Text,
-    Image,
-    Flex,
-    VStack,
-    Button,
-    Heading,
-    SimpleGrid,
-    StackDivider,
-    useColorModeValue,
-    VisuallyHidden,
-    List,
-    ListItem, Icon,
+    Box, Container, Stack, Text, Image, Flex, VStack, Heading, SimpleGrid, StackDivider, useColorModeValue, List,
+    ListItem, Icon, NumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper,NumberDecrementStepper
 } from '@chakra-ui/react';
-import { FcAssistant, FcDonate, FcInTransit } from 'react-icons/fc';
 import { ImSpoonKnife } from 'react-icons/im'
 import { BsClockHistory } from 'react-icons/bs'
 import Feature from "../components/ui/Feature";
 
 
-export default function Landing() {
+export default function Landing(props) {
     return (
         <LandingLayout>
             <Container maxW={'7xl'}>
@@ -37,7 +22,7 @@ export default function Landing() {
                 <Flex>
                         <Image
                             rounded={'md'}
-                            src={hamburg}
+                            src={props.image}
                             fit={'cover'}
                             align={'center'}
                             w={'100%'}
@@ -50,7 +35,7 @@ export default function Landing() {
                                 lineHeight={1.1}
                                 fontWeight={600}
                                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-                                Hamburguesita
+                                {props.name}
                             </Heading>
                         </Box>
 
@@ -75,29 +60,29 @@ export default function Landing() {
                                         icon={<Icon as={ImSpoonKnife} w={10} h={10} />}
                                         title={'Porciones'}
                                         text={
-                                            '4 personas'
+                                            <NumberInput size='sm' maxW={20} defaultValue={props.servings} min={1}>
+                                                <NumberInputField />
+                                                <NumberInputStepper>
+                                                    <NumberIncrementStepper />
+                                                    <NumberDecrementStepper />
+                                                </NumberInputStepper>
+                                            </NumberInput>
                                         }
                                     />
                                     <Feature
                                         icon={<Icon as={BsClockHistory} w={10} h={10} />}
                                         title={'Prep time'}
-                                        text={
-                                            '60 min'
-                                        }
+                                        text={props.prepTime + ' min'}
                                     />
                                     <Feature
                                         icon={<Icon as={BsClockHistory} w={10} h={10} />}
                                         title={'Cook time'}
-                                        text={
-                                            '30 min'
-                                        }
+                                        text={props.cookTime + ' min'}
                                     />
                                     <Feature
                                         icon={<Icon as={BsClockHistory} w={10} h={10} />}
                                         title={'Total time'}
-                                        text={
-                                            '30 min'
-                                        }
+                                        text={props.totalTime + ' min'}
                                     />
                                 </SimpleGrid>
                             </VStack>
@@ -112,11 +97,13 @@ export default function Landing() {
                                 </Text>
                                 <SimpleGrid columns={{ base: 1, md: 1 }} spacing={10}>
                                     <List spacing={2}>
-                                        <ListItem>Chronograph</ListItem>
-                                        <ListItem>Master Chronometer Certified</ListItem>
-                                        <ListItem>Tachymeter</ListItem>
-                                        <ListItem>Tachymeter</ListItem>
-                                        <ListItem>Tachymeter</ListItem>
+                                        {
+                                            props.ingredients.map(item => {
+                                                return (
+                                                    <ListItem>{item.name}</ListItem>
+                                                )
+                                            })
+                                        }
                                     </List>
                                 </SimpleGrid>
                             </Box>
@@ -130,18 +117,16 @@ export default function Landing() {
                                     Instrucciones
                                 </Text>
                                 <List spacing={2}>
-                                    <ListItem>
-                                        <Text as={'span'} fontWeight={'bold'}>1:</Text>{' '}
-                                        ahjsdkjhasjhdgajs dkjahskdjhas{' '}
-                                    </ListItem>
-                                    <ListItem>
-                                        <Text as={'span'} fontWeight={'bold'}>2:</Text>{' '}
-                                        ahjsdkjhasjhdgajs asd dasjddas daskdj dashkdj{' '}
-                                    </ListItem>
-                                    <ListItem>
-                                        <Text as={'span'} fontWeight={'bold'}>3:</Text>{' '}
-                                        ahjsdkjhasjhdgajs dkjahskdjhas{' '}
-                                    </ListItem>
+                                    {
+                                        props.directions.map(item => {
+                                            return (
+                                                <ListItem>
+                                                    <Text as={'span'} fontWeight={'bold'}>1:</Text>{' '}
+                                                    {item}{' '}
+                                                </ListItem>
+                                            )
+                                        })
+                                    }
                                 </List>
 
                             </Box>
