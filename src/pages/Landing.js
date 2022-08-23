@@ -6,6 +6,7 @@ import cards from "../data/carousel.json";
 import {Box, Container, Heading, Stack, Text} from "@chakra-ui/react";
 import recipes from "../data/recipes.json";
 import {Link} from "react-router-dom";
+import Footer from "../components/sections/Footer";
 
 export default function Landing() {
   return (
@@ -26,6 +27,8 @@ export default function Landing() {
                 </Link>
             </Text>
         ))}
+
     </LandingLayout>
+
   );
 }
