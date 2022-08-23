@@ -102,7 +102,7 @@ export default function Landing() {
                                         {
                                             recipe.ingredients.map(item => {
                                                 return (
-                                                    <ListItem>{item.name}</ListItem>
+                                                    <ListItem>{item.quantity} {item.unit} {item.name}</ListItem>
                                                 )
                                             })
                                         }
@@ -120,10 +120,10 @@ export default function Landing() {
                                 </Text>
                                 <List spacing={2}>
                                     {
-                                        recipe.directions.map(item => {
+                                        recipe.directions.map((item, index) => {
                                             return (
                                                 <ListItem>
-                                                    <Text as={'span'} fontWeight={'bold'}>1:</Text>{' '}
+                                                    <Text as={'span'} fontWeight={'bold'}>{index+1}:</Text>{' '}
                                                     {item}{' '}
                                                 </ListItem>
                                             )

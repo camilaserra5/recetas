@@ -10,6 +10,11 @@
         "image": "hamburguesa.jpeg",
         "ingredients": [
             {
+                "quantity":2,
+                "unit":"",
+                "name":"huevos"
+            },
+            {
                 "name":"chocolate",
                 "quantity":2,
                 "unit":"barras"
@@ -37,14 +42,14 @@
         "image": "hamburguesa.jpeg",
         "ingredients": [
             {
-                "name":"chocolate",
                 "quantity":2,
-                "unit":"barras"
+                "unit":"",
+                "name":"huevos"
             },
             {
-                "name":"chocolate",
                 "quantity":2,
-                "unit":"barras"
+                "unit":"barras",
+                "name":"chocolate"
             }
         ],
         "directions": [
