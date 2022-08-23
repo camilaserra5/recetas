@@ -47,6 +47,7 @@ export default function CaptionCarousel() {
       height={'600px'}
       width={'full'}
       overflow={'hidden'}
+      marginTop="-62px"
     >
       {/* CSS files for react-slick */}
 
