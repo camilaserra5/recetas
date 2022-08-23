@@ -29,8 +29,8 @@ const SocialButton = ({ children, label, href }) => {
     <Button
       bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
       rounded={'full'}
-      w={8}
-      h={8}
+      width="50px"
+      height="20px"
       cursor={'pointer'}
       as={'a'}
       href={href}
@@ -92,6 +92,17 @@ export default function Header() {
             <DesktopNav />
           </Flex>
         </Flex>
+        <Box direction={'row'} spacing={2} float="right">
+          <SocialButton label={'Twitter'} href={'#'}>
+            <FaTwitter size={50} />
+          </SocialButton>
+          <SocialButton label={'YouTube'} href={'#'}>
+            <FaYoutube size={50} />
+          </SocialButton>
+          <SocialButton label={'Instagram'} href={'#'}>
+            <FaInstagram size={50} />
+          </SocialButton>
+        </Box>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity opacity="0.60">
@@ -146,17 +157,6 @@ const DesktopNav = () => {
           </Popover>
         </Box>
       ))}
-      <Box direction={'row'} spacing={2}>
-        <SocialButton label={'Twitter'} href={'#'}>
-          <FaTwitter />
-        </SocialButton>
-        <SocialButton label={'YouTube'} href={'#'}>
-          <FaYoutube />
-        </SocialButton>
-        <SocialButton label={'Instagram'} href={'#'}>
-          <FaInstagram />
-        </SocialButton>
-      </Box>
     </Stack>
   );
 };
