@@ -19,8 +19,8 @@ export const recipeData = [
         ],
         directions: [
             "primero asdjhkasjhd ashdkasjh kdha",
-            "",
-            ""
+            "segundo asdas",
+            "ultiiiii"
         ],
     },
     {
@@ -29,6 +29,7 @@ export const recipeData = [
         prepTime: 30,
         cookTime: 20,
         totalTime: 30,
+        picture: "hamburguesa.jpeg",
         ingredients: [
             {
                 name:"caca",
@@ -40,6 +41,11 @@ export const recipeData = [
                 quantity:4,
                 unit:"unidades"
             }
+        ],
+        directions: [
+            "primero asdjhkasjhd ashdkasjh kdha",
+            "segundo asdas",
+            "ultiiiii"
         ],
     },
 ];
