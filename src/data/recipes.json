@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Brownie",
+        "uri": "receta-brownie",
+        "servings": 2,
+        "prepTime": 10,
+        "cookTime": 20,
+        "totalTime": 30,
+        "image": "hamburguesa.jpeg",
+        "ingredients": [
+            {
+                "name":"chocolate",
+                "quantity":2,
+                "unit":"barras"
+            },
+            {
+                "name":"falopa",
+                "quantity":2,
+                "unit":"kg"
+            }
+        ],
+        "directions": [
+            "primero asdjhkasjhd ashdkasjh kdha",
+            "segundo asdas",
+            "ultiiiii"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "caca",
+        "uri": "receta-caca",
+        "servings": 2,
+        "prepTime": 10,
+        "cookTime": 20,
+        "totalTime": 30,
+        "image": "hamburguesa.jpeg",
+        "ingredients": [
+            {
+                "name":"chocolate",
+                "quantity":2,
+                "unit":"barras"
+            },
+            {
+                "name":"chocolate",
+                "quantity":2,
+                "unit":"barras"
+            }
+        ],
+        "directions": [
+            "primero asdjhkasjhd ashdkasjh kdha",
+            "segundo asdas",
+            "ultiiiii"
+        ]
+    }
+]

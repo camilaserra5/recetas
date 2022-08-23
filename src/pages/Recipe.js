@@ -1,7 +1,6 @@
 import React from "react";
 
 import LandingLayout from "../components/layouts/LandingLayout";
-import hamburg from '../assets/hamburguesa.jpeg';
 import {
     Box, Container, Stack, Text, Image, Flex, VStack, Heading, SimpleGrid, StackDivider, useColorModeValue, List,
     ListItem, Icon, NumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper,NumberDecrementStepper
@@ -9,9 +8,12 @@ import {
 import { ImSpoonKnife } from 'react-icons/im'
 import { BsClockHistory } from 'react-icons/bs'
 import Feature from "../components/ui/Feature";
+import {useLocation} from "react-router-dom";
 
+export default function Landing() {
+    const location = useLocation()
+    const { recipe } = location.state
 
-export default function Landing(props) {
     return (
         <LandingLayout>
             <Container maxW={'7xl'}>
@@ -22,7 +24,7 @@ export default function Landing(props) {
                 <Flex>
                         <Image
                             rounded={'md'}
-                            src={props.image}
+                            src={recipe.image}
                             fit={'cover'}
                             align={'center'}
                             w={'100%'}
@@ -35,7 +37,7 @@ export default function Landing(props) {
                                 lineHeight={1.1}
                                 fontWeight={600}
                                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-                                {props.name}
+                                {recipe.name}
                             </Heading>
                         </Box>
 
@@ -60,7 +62,7 @@ export default function Landing(props) {
                                         icon={<Icon as={ImSpoonKnife} w={10} h={10} />}
                                         title={'Porciones'}
                                         text={
-                                            <NumberInput size='sm' maxW={20} defaultValue={props.servings} min={1}>
+                                            <NumberInput size='sm' maxW={20} defaultValue={recipe.servings} min={1}>
                                                 <NumberInputField />
                                                 <NumberInputStepper>
                                                     <NumberIncrementStepper />
@@ -72,17 +74,17 @@ export default function Landing(props) {
                                     <Feature
                                         icon={<Icon as={BsClockHistory} w={10} h={10} />}
                                         title={'Prep time'}
-                                        text={props.prepTime + ' min'}
+                                        text={recipe.prepTime + ' min'}
                                     />
                                     <Feature
                                         icon={<Icon as={BsClockHistory} w={10} h={10} />}
                                         title={'Cook time'}
-                                        text={props.cookTime + ' min'}
+                                        text={recipe.cookTime + ' min'}
                                     />
                                     <Feature
                                         icon={<Icon as={BsClockHistory} w={10} h={10} />}
                                         title={'Total time'}
-                                        text={props.totalTime + ' min'}
+                                        text={recipe.totalTime + ' min'}
                                     />
                                 </SimpleGrid>
                             </VStack>
@@ -98,7 +100,7 @@ export default function Landing(props) {
                                 <SimpleGrid columns={{ base: 1, md: 1 }} spacing={10}>
                                     <List spacing={2}>
                                         {
-                                            props.ingredients.map(item => {
+                                            recipe.ingredients.map(item => {
                                                 return (
                                                     <ListItem>{item.name}</ListItem>
                                                 )
@@ -118,7 +120,7 @@ export default function Landing(props) {
                                 </Text>
                                 <List spacing={2}>
                                     {
-                                        props.directions.map(item => {
+                                        recipe.directions.map(item => {
                                             return (
                                                 <ListItem>
                                                     <Text as={'span'} fontWeight={'bold'}>1:</Text>{' '}
