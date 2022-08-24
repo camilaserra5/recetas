@@ -49,7 +49,7 @@ export default function CaptionCarousel() {
   return (
     <Box
       position={'relative'}
-      height={'500px'}
+      height={'600px'}
       width={'full'}
       overflow={'hidden'}
       marginTop="-62px"
@@ -84,7 +84,7 @@ export default function CaptionCarousel() {
       </IconButton>
       {/* Slider */}
       <Slider {...settings} ref={slider => setSlider(slider)}>
-        {cards.map((card, index) => (
+        {cards.slice(0, 3).map((card, index) => (
           <Box
             key={index}
             height= 'auto'

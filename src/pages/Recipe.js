@@ -125,17 +125,17 @@ export default function Recipe() {
                                     />
                                     <Feature
                                         icon={<Icon as={UpDownIcon} w={10} h={10} />}
-                                        title={'Prep time'}
+                                        title={'Prep'}
                                         text={recipe.prepTime + ' min'}
                                     />
                                     <Feature
                                         icon={<Icon as={UpDown4Icon} w={10} h={10} />}
-                                        title={'Cook time'}
+                                        title={'Cocción'}
                                         text={recipe.cookTime + ' min'}
                                     />
                                     <Feature
                                         icon={<Icon as={UpDown3Icon} w={10} h={10} />}
-                                        title={'Total time'}
+                                        title={'Total'}
                                         text={recipe.totalTime + ' min'}
                                     />
                                 </SimpleGrid>

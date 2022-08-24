@@ -11,8 +11,9 @@ export default function Logo(props) {
                     src={logo}
                     fit={'cover'}
                     align={'center'}
+                    justify={'center'}
                     w={'100%'}
-                    h={{ base: '100%', sm: '40px', lg: '40px' }}
+                    h={{ base: '100%', sm: '50px', lg: '50px' }}
                 />
             </Text>
         </Box>
