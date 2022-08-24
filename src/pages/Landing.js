@@ -17,7 +17,7 @@ export default function Landing() {
       /> */}
       <CaptionCarousel />
         {recipes.map((recipe) => (
-            <ArticleList title={recipe}/>
+            <ArticleList key={recipe.id} title={recipe}/>
         ))}
     </LandingLayout>
 

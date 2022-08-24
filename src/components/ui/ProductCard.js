@@ -33,7 +33,7 @@ export default function ProductCard(props) {
             </Box>
             <Stack>
                 <Stack spacing="1" align="center">
-                    <Text fontWeight="medium" color={useColorModeValue('gray.700', 'gray.400')}>
+                    <Text fontWeight="bold" color={useColorModeValue('gray.700', 'gray.400')}>
                         {name}
                     </Text>
                 </Stack>

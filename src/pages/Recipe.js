@@ -10,6 +10,7 @@ import Feature from "../components/ui/Feature";
 import {useLocation} from "react-router-dom";
 
 import { createIcon } from '@chakra-ui/icons'
+import BlogTags from "../components/sections/BlogTags";
 
 export const UpDownIcon = createIcon({
     displayName: 'UpDownIcon',
@@ -73,16 +74,19 @@ export default function Recipe() {
                     spacing={{ base: 8, md: 10 }}
                     pt={{ base: 9, md: 12 }}
                     pb={{ base: 18, md: 24 }}>
-                <Flex>
-                        <Image
-                            rounded={'md'}
-                            src={'../'+recipe.image}
-                            fit={'cover'}
-                            align={'center'}
-                            w={'100%'}
-                            h={{ base: '100%', sm: '400px', lg: '500px' }}
-                        />
-                    </Flex>
+                    <Stack spacing={{ base: 6, md: 10 }}>
+                        <Flex >
+                            <Image boxShadow='xl'
+                                rounded={'md'}
+                                src={'../'+recipe.image}
+                                fit={'cover'}
+                                align={'center'}
+                                w={'100%'}
+                                h={{ base: '100%', sm: '400px', lg: '500px' }}
+                            />
+                        </Flex>
+                        <BlogTags key={recipe.id} tags={recipe.tags} />
+                    </Stack>
                     <Stack spacing={{ base: 6, md: 10 }}>
                         <Box as={'header'}>
                             <Heading
@@ -143,8 +147,8 @@ export default function Recipe() {
                             <Box>
                                 <Text
                                     fontSize={{ base: '16px', lg: '18px' }}
-                                    color={useColorModeValue('yellow.500', 'yellow.300')}
-                                    fontWeight={'500'}
+                                    color={useColorModeValue('teal.500', 'teal.300')}
+                                    fontWeight={'800'}
                                     textTransform={'uppercase'}
                                     mb={'4'}>
                                     Ingredientes
@@ -164,8 +168,8 @@ export default function Recipe() {
                             <Box>
                                 <Text
                                     fontSize={{ base: '16px', lg: '18px' }}
-                                    color={useColorModeValue('yellow.500', 'yellow.300')}
-                                    fontWeight={'500'}
+                                    color={useColorModeValue('teal.500', 'teal.300')}
+                                    fontWeight={'800'}
                                     textTransform={'uppercase'}
                                     mb={'4'}>
                                     Instrucciones

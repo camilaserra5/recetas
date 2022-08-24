@@ -17,6 +17,7 @@ import { HamburgerIcon, CloseIcon, ChevronDownIcon } from '@chakra-ui/icons';
 import { FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
 import Logo from '../ui/Logo';
 import SocialButton from '../ui/SocialButton';
+import {NavLink as RouterLink} from "react-router-dom";
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
@@ -138,14 +139,16 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = ({ label, href, subLabel }) => {
+const DesktopSubNav = ({ label, href, data }) => {
   return (
     <Link
-      href={href}
+      to={href}
       role={'group'}
       display={'block'}
       p={2}
       rounded={'md'}
+      as={RouterLink}
+      state={{ category: data }}
       _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
     >
       <Stack direction={'row'} align={'center'}>
@@ -157,7 +160,6 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           >
             {label}
           </Text>
-          <Text fontSize={'sm'}>{subLabel}</Text>
         </Box>
       </Stack>
     </Link>
@@ -242,16 +244,19 @@ const NAV_ITEMS = [
     label: 'Recetas',
     children: [
       {
-        label: 'Meal Prep',
-        href: '/category/feo',
+        label: 'Carne',
+        href: '/category/carne',
+        data: 'carne'
       },
       {
-        label: 'Sopas',
-        href: '#',
+        label: 'Cena',
+        href: '/category/cena',
+        data: 'cena'
       },
       {
-        label: 'Ensaladas',
-        href: '#',
+        label: 'Fit',
+        href: '/category/fit',
+        data: 'fit'
       },
     ],
   },

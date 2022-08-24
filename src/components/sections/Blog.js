@@ -54,9 +54,9 @@ export default function ArticleList({title}) {
                     flexDirection="column"
                     justifyContent="center"
                     marginTop={{ base: '3', sm: '0' }}>
-                    <BlogTags tags={title.tags} />
+                    <BlogTags key={title.id} tags={title.tags} />
                     <Heading marginTop="1">
-                        <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+                        <Link key={title.id} textDecoration="none" _hover={{ textDecoration: 'none' }}>
                             {title.name}
                         </Link>
                     </Heading>

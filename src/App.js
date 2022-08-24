@@ -5,7 +5,7 @@ import Landing from "./pages/Landing"
 import Recipe from "./pages/Recipe"
 import ScrollToTop from "./components/ui/ScrollToTop";
 import Category from "./pages/Category";
-
+import "./style.css"
 function App() {
     return (
     <BrowserRouter>

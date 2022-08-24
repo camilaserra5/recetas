@@ -2,10 +2,9 @@
     font-family: sans-serif;
     text-align: center;
 }
-.enableBlur>* {
-    filter: blur(1.2px);
+.slick-slide {
+    visibility: hidden;
 }
-
-.disableBlur {
-    filter: blur(0);
+.slick-slide.slick-active {
+    visibility: visible;
 }

@@ -1,6 +1,6 @@
 import {useLocation} from "react-router-dom";
 import LandingLayout from "../components/layouts/LandingLayout";
-import {Box} from "@chakra-ui/react";
+import {Box, useColorModeValue} from "@chakra-ui/react";
 import ProductGrid from "../components/ui/ProductGrid";
 import ProductCard from "../components/ui/ProductCard";
 import recipes from "../data/recipes.json";
@@ -36,7 +36,7 @@ export default function Category() {
     );
     return (
         <LandingLayout>
-        <Box as={Container} maxW="7xl" mt={14} p={4}>
+        <Box as={Container} maxW="7xl" mt={2} mb={7} p={4}>
             <Grid
                 templateColumns={{
                     base: 'repeat(1, 1fr)',
@@ -46,7 +46,7 @@ export default function Category() {
                 gap={4}>
                 <GridItem colSpan={1}>
                     <VStack alignItems="flex-start" spacing="20px">
-                        <chakra.h2 fontSize="3xl" fontWeight="700">
+                        <chakra.h2 fontSize="3xl" fontWeight="700" color={useColorModeValue('teal.500', 'teal.100')}>
                             Categoría: {location.state.category}
                         </chakra.h2>
                     </VStack>
@@ -56,7 +56,7 @@ export default function Category() {
                     </Flex>
                 </GridItem>
             </Grid>
-            <Divider mt={12} mb={12} />
+            <Divider mt={6} mb={6} />
             <Grid
                 templateColumns={{
                     base: 'repeat(1, 1fr)',
