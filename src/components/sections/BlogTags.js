@@ -9,7 +9,7 @@ const BlogTags = (props) => {
                 return (
                     <Link as={RouterLink}  to={'category/' + tag}
                           state={{ category: tag }} textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                        <Tag size={'md'} variant="solid" colorScheme="orange" key={tag}>
+                        <Tag size={'md'} variant='solid' colorScheme='teal' key={tag}>
                             {tag}
                         </Tag>
                     </Link>

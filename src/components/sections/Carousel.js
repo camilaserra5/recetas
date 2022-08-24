@@ -111,10 +111,10 @@ export default function CaptionCarousel() {
               >
 
                 <Box boxShadow='dark-lg' p='2' rounded='md' bg="rgba(204, 204, 204, 0.6)" align='center' justify='center'>
-                  <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} color="#08333E" >
+                    <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} color="#16545B" >
                     {card.name}
                   </Heading>
-                  <Text textDecoration="underline"   fontSize={{ base: 'md', lg: 'lg' }} color="#08333E">
+                  <Text textDecoration="underline"   fontSize={{ base: 'md', lg: 'lg' }} color="#16545B">
                     <Link to={card.uri} state={{ recipe: card }}>
                       ver más
                     </Link>
