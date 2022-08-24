@@ -8,6 +8,7 @@ import BlogTags from "./BlogTags";
 
 
 export default function ArticleList({title}) {
+    console.log(title.image)
     return (
         <Container maxW={'7xl'} p="12">
             <Box

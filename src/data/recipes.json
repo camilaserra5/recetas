@@ -1,29 +1,29 @@
 [
     {
         "id": 1,
-        "name": "Brownie",
-        "uri": "recipes/receta-brownie",
+        "name": "Sopa de calabaza",
+        "uri": "recipes/sopa",
         "servings": 2,
         "prepTime": 10,
         "cookTime": 20,
         "totalTime": 30,
-        "image": "receta1.jpg",
-        "tags": ["rico", "postre"],
+        "image": "platos/sopa.jpg",
+        "tags": [
+            "rico",
+            "sopa",
+            "calabaza",
+            "fit"
+        ],
         "ingredients": [
             {
-                "quantity":2,
-                "unit":"",
-                "name":"huevos"
+                "name": "chocolate",
+                "quantity": 2,
+                "unit": "barras"
             },
             {
-                "name":"chocolate",
-                "quantity":2,
-                "unit":"barras"
-            },
-            {
-                "name":"falopa",
-                "quantity":2,
-                "unit":"kg"
+                "name": "falopa",
+                "quantity": 2,
+                "unit": "kg"
             }
         ],
         "directions": [
@@ -34,24 +34,33 @@
     },
     {
         "id": 2,
-        "name": "caca y pis",
-        "uri": "recipes/receta-caca",
+        "name": "Avocado toast",
+        "uri": "recipes/avocado-toast",
         "servings": 2,
         "prepTime": 10,
         "cookTime": 20,
         "totalTime": 30,
-        "image": "receta2.jpg",
-        "tags": ["feo", "feo2"],
+        "image": "platos/avocado-toast.jpg",
+        "tags": [
+            "palta",
+            "desayuno",
+            "fit"
+        ],
         "ingredients": [
             {
-                "quantity":2,
-                "unit":"",
-                "name":"huevos"
+                "quantity": 2,
+                "unit": "",
+                "name": "huevos"
             },
             {
-                "quantity":2,
-                "unit":"barras",
-                "name":"chocolate"
+                "quantity": 2,
+                "unit": "kg",
+                "name": "carne"
+            },
+            {
+                "quantity": 4,
+                "unit": "u",
+                "name": "cebolla"
             }
         ],
         "directions": [
@@ -61,25 +70,145 @@
         ]
     },
     {
-        "id": 2,
-        "name": "Ketchup con Alioli",
-        "uri": "recipes/receta-alioli",
+        "id": 3,
+        "name": "Carne a la cacerola",
+        "uri": "recipes/carne-a-la-cacerola",
+        "servings": 2,
+        "prepTime": 10,
+        "cookTime": 20,
+        "totalTime": 20,
+        "image": "platos/carne.jpg",
+        "tags": [
+            "carne",
+            "cena",
+            "verduras"
+        ],
+        "ingredients": [
+            {
+                "quantity": 2,
+                "unit": "",
+                "name": "huevos"
+            },
+            {
+                "quantity": 2,
+                "unit": "kg",
+                "name": "carne"
+            },
+            {
+                "quantity": 4,
+                "unit": "u",
+                "name": "cebolla"
+            }
+        ],
+        "directions": [
+            "primero asdjhkasjhd ashdkasjh kdha",
+            "segundo asdas",
+            "ultiiiii"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Ensalada",
+        "uri": "recipes/ensalada",
         "servings": 2,
         "prepTime": 10,
         "cookTime": 20,
         "totalTime": 30,
-        "image": "receta3.jpg",
-        "tags": ["feo", "feo2"],
+        "image": "platos/ensalada.jpg",
+        "tags": [
+            "verduras",
+            "fit",
+            "ensalada"
+        ],
         "ingredients": [
             {
-                "quantity":2,
-                "unit":"",
-                "name":"huevos"
+                "quantity": 2,
+                "unit": "",
+                "name": "huevos"
             },
             {
-                "quantity":1,
-                "unit":"barras",
-                "name":"chocolate"
+                "quantity": 2,
+                "unit": "kg",
+                "name": "carne"
+            },
+            {
+                "quantity": 4,
+                "unit": "u",
+                "name": "cebolla"
+            }
+        ],
+        "directions": [
+            "primero asdjhkasjhd ashdkasjh kdha",
+            "segundo asdas",
+            "ultiiiii"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Fajitas",
+        "uri": "recipes/fajitas",
+        "servings": 2,
+        "prepTime": 10,
+        "cookTime": 20,
+        "totalTime": 30,
+        "image": "platos/fajitas.jpg",
+        "tags": [
+            "verduras",
+            "fajitas",
+            "mexicano"
+        ],
+        "ingredients": [
+            {
+                "quantity": 2,
+                "unit": "",
+                "name": "huevos"
+            },
+            {
+                "quantity": 2,
+                "unit": "kg",
+                "name": "carne"
+            },
+            {
+                "quantity": 4,
+                "unit": "u",
+                "name": "cebolla"
+            }
+        ],
+        "directions": [
+            "primero asdjhkasjhd ashdkasjh kdha",
+            "segundo asdas",
+            "ultiiiii"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Hamburguesa",
+        "uri": "recipes/hamburguesa",
+        "servings": 2,
+        "prepTime": 10,
+        "cookTime": 20,
+        "totalTime": 30,
+        "image": "platos/hamburguesa.jpeg",
+        "tags": [
+            "carne",
+            "cena",
+            "americano"
+        ],
+        "ingredients": [
+            {
+                "quantity": 2,
+                "unit": "",
+                "name": "huevos"
+            },
+            {
+                "quantity": 2,
+                "unit": "kg",
+                "name": "carne"
+            },
+            {
+                "quantity": 4,
+                "unit": "u",
+                "name": "cebolla"
             }
         ],
         "directions": [
@@ -89,3 +218,5 @@
         ]
     }
 ]
+
+

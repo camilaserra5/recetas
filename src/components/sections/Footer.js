@@ -1,17 +1,22 @@
-import { ButtonGroup, Container, IconButton, Stack, Text } from '@chakra-ui/react'
+import {ButtonGroup, Container, IconButton, Stack, Text, useColorModeValue} from '@chakra-ui/react'
 import * as React from 'react'
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import {FaGithub, FaInstagram, FaLinkedin, FaTwitter} from 'react-icons/fa'
+import SocialButton from "../ui/SocialButton";
 
 const Footer = () => (
     <Container
+        opacity="0.60"
+        bg={useColorModeValue('black', 'gray.800')}
+        color={useColorModeValue('white', 'white')}
+
         as="footer"
         role="contentinfo"
         py={{
-            base: '12',
-            md: '16',
+            base: '2',
+            md: '6',
         }}
         w="100%"
-        maxW="90%"
+        minW="100%"
         alignContent={"left"}
 >
         <Stack
@@ -22,19 +27,15 @@ const Footer = () => (
         >
             <Stack justify="space-between" direction="row" align="center">
                 <ButtonGroup variant="ghost">
-                    <IconButton
-                        as="a"
-                        href="#"
-                        aria-label="LinkedIn"
-                        icon={<FaLinkedin fontSize="1.25rem" />}
-                    />
-                    <IconButton as="a" href="#" aria-label="GitHub" icon={<FaGithub fontSize="1.25rem" />} />
-                    <IconButton
-                        as="a"
-                        href="#"
-                        aria-label="Twitter"
-                        icon={<FaTwitter fontSize="1.25rem" />}
-                    />
+                    <SocialButton label={'Twitter'} href={'https://twitter.com/lauratmares'}>
+                        <FaTwitter size={50} />
+                    </SocialButton>
+                    <SocialButton label={'LinkedIn'} href={'linkedin.com/in/lauratmares/'}>
+                        <FaLinkedin size={50} />
+                    </SocialButton>
+                    <SocialButton label={'Instagram'} href={'https://instagram.com/lauratmares'}>
+                        <FaInstagram size={50} />
+                    </SocialButton>
                 </ButtonGroup>
             </Stack>
             <Text fontSize="sm" color="subtle">

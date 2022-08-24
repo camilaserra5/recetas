@@ -2,3 +2,10 @@
     font-family: sans-serif;
     text-align: center;
 }
+.enableBlur>* {
+    filter: blur(1.2px);
+}
+
+.disableBlur {
+    filter: blur(0);
+}

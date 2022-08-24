@@ -11,43 +11,16 @@ import {
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
-  Button,
-  VisuallyHidden,
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
-  ChevronRightIcon,
 } from '@chakra-ui/icons';
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import {FaInstagram, FaLinkedin, FaTwitter, FaYoutube} from 'react-icons/fa';
 import Logo from "../ui/Logo";
-
-const SocialButton = ({ children, label, href }) => {
-  return (
-    <Button
-      bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-      rounded={'full'}
-      width="50px"
-      height="20px"
-      cursor={'pointer'}
-      as={'a'}
-      href={href}
-      display={'inline-flex'}
-      alignItems={'center'}
-      justifyContent={'center'}
-      transition={'background 0.3s ease'}
-      _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
-      }}
-    >
-      <VisuallyHidden>{label}</VisuallyHidden>
-      {children}
-    </Button>
-  );
-};
+import SocialButton from "../ui/SocialButton";
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
@@ -87,13 +60,13 @@ export default function Header() {
           </Flex>
         </Flex>
         <Box direction={'row'} spacing={2} float="right">
-          <SocialButton label={'Twitter'} href={'#'}>
+          <SocialButton label={'Twitter'} href={'https://twitter.com/lauratmares'}>
             <FaTwitter size={50} />
           </SocialButton>
-          <SocialButton label={'YouTube'} href={'#'}>
-            <FaYoutube size={50} />
+          <SocialButton label={'LinkedIn'} href={'https://linkedin.com/in/lauratmares/'}>
+            <FaLinkedin size={50} />
           </SocialButton>
-          <SocialButton label={'Instagram'} href={'#'}>
+          <SocialButton label={'Instagram'} href={'https://instagram.com/lauratmares'}>
             <FaInstagram size={50} />
           </SocialButton>
         </Box>
@@ -120,6 +93,7 @@ const DesktopNav = () => {
               <Link
                 p={2}
                 href={navItem.href ?? '#'}
+                state={{ category: navItem.label }}
                 fontSize={'sm'}
                 fontWeight={500}
                 color={linkColor}
@@ -260,7 +234,7 @@ const NAV_ITEMS = [
     children: [
       {
         label: 'Meal Prep',
-        href: '#',
+        href: '/category/feo',
       },
       {
         label: 'Sopas',

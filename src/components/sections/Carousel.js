@@ -49,7 +49,7 @@ export default function CaptionCarousel() {
   return (
     <Box
       position={'relative'}
-      height={'600px'}
+      height={'500px'}
       width={'full'}
       overflow={'hidden'}
       marginTop="-62px"
@@ -87,14 +87,19 @@ export default function CaptionCarousel() {
         {cards.map((card, index) => (
           <Box
             key={index}
-            height={'6xl'}
+            height= 'auto'
             position="relative"
-            backgroundPosition="center"
-            backgroundRepeat="no-repeat"
-            backgroundSize="cover"
-            backgroundImage={card.image}
           >
-            {/* This is the block you need to change, to customize the caption */}
+            <Container size="container.lg" key={index}
+                       height= 'auto'
+                       position="absolute"
+                       minWidth="100%"
+                       backgroundPosition="center"
+                       backgroundRepeat="no-repeat"
+                       backgroundSize="cover"
+                       backgroundImage={card.image}
+                       filter='auto' blur='2px' top="0" left="0" right="0" bottom="0">
+            </Container>
             <Container size="container.lg" height="600px" position="relative">
               <Stack
                 spacing={6}
@@ -105,11 +110,11 @@ export default function CaptionCarousel() {
                 transform="translate(0, -50%)"
               >
 
-                <Box boxShadow='dark-lg' p='2' rounded='md' bg='#bebbbf' opacity='90%' align='center' justify='center'>
-                  <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} color="#0292B7" >
+                <Box boxShadow='dark-lg' p='2' rounded='md' bg="rgba(204, 204, 204, 0.6)" align='center' justify='center'>
+                  <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} color="#08333E" >
                     {card.name}
                   </Heading>
-                  <Text fontSize={{ base: 'md', lg: 'lg' }} color="GrayText">
+                  <Text textDecoration="underline"   fontSize={{ base: 'md', lg: 'lg' }} color="#08333E">
                     <Link to={card.uri} state={{ recipe: card }}>
                       ver más
                     </Link>
