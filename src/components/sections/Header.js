@@ -13,14 +13,10 @@ import {
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
-import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
-} from '@chakra-ui/icons';
-import {FaInstagram, FaLinkedin, FaTwitter, FaYoutube} from 'react-icons/fa';
-import Logo from "../ui/Logo";
-import SocialButton from "../ui/SocialButton";
+import { HamburgerIcon, CloseIcon, ChevronDownIcon } from '@chakra-ui/icons';
+import { FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
+import Logo from '../ui/Logo';
+import SocialButton from '../ui/SocialButton';
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
@@ -38,6 +34,7 @@ export default function Header() {
         borderColor={useColorModeValue('gray.200', 'gray.900')}
         align={'center'}
         paddingTop="0px"
+        paddingBottom="0px"
       >
         <Flex
           flex={{ base: 1, md: 'auto' }}
@@ -53,20 +50,33 @@ export default function Header() {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} >
+        <Flex flex={{ base: 1 }}>
           <Logo float="left" />
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10} justify={[{ base: 'right', md: 'center' }]} >
+          <Flex
+            display={{ base: 'none', md: 'flex' }}
+            ml={14}
+            justify={[{ base: 'right', md: 'center' }]}
+          >
             <DesktopNav />
           </Flex>
         </Flex>
         <Box direction={'row'} spacing={2} float="right">
-          <SocialButton label={'Twitter'} href={'https://twitter.com/lauratmares'}>
+          <SocialButton
+            label={'Twitter'}
+            href={'https://twitter.com/lauratmares'}
+          >
             <FaTwitter size={50} />
           </SocialButton>
-          <SocialButton label={'LinkedIn'} href={'https://linkedin.com/in/lauratmares/'}>
+          <SocialButton
+            label={'LinkedIn'}
+            href={'https://linkedin.com/in/lauratmares/'}
+          >
             <FaLinkedin size={50} />
           </SocialButton>
-          <SocialButton label={'Instagram'} href={'https://instagram.com/lauratmares'}>
+          <SocialButton
+            label={'Instagram'}
+            href={'https://instagram.com/lauratmares'}
+          >
             <FaInstagram size={50} />
           </SocialButton>
         </Box>
@@ -85,7 +95,7 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue('black', 'gray.800');
 
   return (
-    <Stack direction={'row'} spacing={4} >
+    <Stack direction={'row'} spacing={4} width="100%" alignItems={'center'}>
       {NAV_ITEMS.map(navItem => (
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -94,7 +104,6 @@ const DesktopNav = () => {
                 p={2}
                 href={navItem.href ?? '#'}
                 state={{ category: navItem.label }}
-                fontSize={'sm'}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
