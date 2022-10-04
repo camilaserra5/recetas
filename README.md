@@ -1,3 +1,7 @@
+## Recetas by @misslamase
+A blog made with react to show recipes. Demo at http://misslamase.com/
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
